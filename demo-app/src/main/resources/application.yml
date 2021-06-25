@@ -1,0 +1,10 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://104.129.12.184:3306/nft_sys?useAffectedRows=true&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&verifyServerCertificate=false&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: iboxpwd123$
