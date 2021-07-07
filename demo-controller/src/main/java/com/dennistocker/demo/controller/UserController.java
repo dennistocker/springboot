@@ -2,13 +2,12 @@ package com.dennistocker.demo.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.dennistocker.demo.common.annotation.ResultController;
+import com.dennistocker.demo.model.PageReq;
 import com.dennistocker.demo.model.User;
 import com.dennistocker.demo.service.api.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -36,7 +35,12 @@ public class UserController extends BaseController {
     }
 
     @GetMapping("/page")
-    public Page<User> getUserByPage(@RequestParam Integer pageNo, @RequestParam Integer pageSize) {
-        return userService.page(new Page<>(pageNo, pageSize));
+    public Page<User> getUserByPage(@RequestParam String pageNo, @RequestParam String pageSize) {
+        return userService.page(new Page<>(Integer.parseInt(pageNo), Integer.parseInt(pageSize)));
+    }
+
+    @PostMapping("/postPage")
+    public Page<User> getUserByPostPage(@RequestBody PageReq req) {
+        return userService.page(new Page<>(Integer.parseInt(req.getPageNo()), Integer.parseInt(req.getPageSize())));
     }
 }

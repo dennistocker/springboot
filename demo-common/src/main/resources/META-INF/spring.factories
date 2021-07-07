@@ -1,0 +1,3 @@
+org.springframework.context.ApplicationContextInitializer=com.dennistocker.demo.common.listener.MyContextInitializer
+#org.springframework.context.ApplicationListener=com.dennistocker.demo.common.listener.MyApplicationListener
+--org.springframework.boot.SpringApplicationRunListener=com.dennistocker.demo.common.listener.MyApplicationRunListener

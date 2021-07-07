@@ -8,3 +8,12 @@ spring:
     url: jdbc:mysql://104.129.12.184:3306/nft_sys?useAffectedRows=true&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&verifyServerCertificate=false&useSSL=false&zeroDateTimeBehavior=convertToNull
     username: root
     password: iboxpwd123$
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+xss:
+  enabled: true
+  urlPatterns: /*
+  excludeUrls: /exclude1,/exclude2

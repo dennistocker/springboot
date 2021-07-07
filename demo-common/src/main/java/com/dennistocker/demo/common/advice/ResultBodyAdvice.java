@@ -1,4 +1,4 @@
-package com.dennistocker.demo.common.aop;
+package com.dennistocker.demo.common.advice;
 
 import com.dennistocker.demo.common.Result;
 import com.dennistocker.demo.common.ResultCode;
@@ -68,6 +68,6 @@ public class ResultBodyAdvice implements ResponseBodyAdvice<Object> {
 
     @ExceptionHandler(Exception.class)
     public Result<?> exceptionHandler(Exception ex, WebRequest request) {
-        return Result.failure(ex.getMessage());
+        return Result.failure(ex.toString());
     }
 }
